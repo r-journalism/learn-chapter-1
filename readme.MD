@@ -32,7 +32,7 @@ You can manually set this up by:
 
 *Session > Set Working Directory > To Project Directory*
 
-Alternatively, you can double click the **learn-chapter-2.Rproj** file from your finder/file browser.
+Alternatively, you can double click the **learn-chapter-1.Rproj** file from your finder/file browser.
 
 ----
 
