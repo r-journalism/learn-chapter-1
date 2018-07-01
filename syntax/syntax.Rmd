@@ -1,13 +1,15 @@
 ---
 title: "R basics, help, mistakes"
-description: "A guide for R basics, common mistakes you might face, and how you might get help"
 author: "Andrew Ba Tran"
-date: 2018-05-27T21:13:14-05:00
-categories: ["R"]
-tags: ["R", "basics", "programming"]
-weight: 5
-slug: r-syntax
+description: "https://learn.r-journalism.com/en/how_to_use_r/"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
+
+This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/syntax/r-syntax/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
+
 
 
 ## Some R code basics

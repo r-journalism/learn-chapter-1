@@ -1,13 +1,15 @@
 ---
 title: "Data structures in R"
-description: "Types of data that you'll be working with in R"
 author: "Andrew Ba Tran"
-date: 2018-05-27T21:13:14-05:00
-categories: ["R"]
-tags: ["R", "data structures"]
-weight: 3
-slug: data-structures
+description: "https://learn.r-journalism.com/en/how_to_use_r/"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
+
+This is from the [first chapter](https://learn.r-journalism.com/en/how_to_use_r/initial_exploration/data-structures/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
+
 
 ## Vectors
 

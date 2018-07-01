@@ -1,0 +1,92 @@
+---
+title: "Setting up for this class"
+author: "Andrew Ba Tran"
+description: "https://learn.r-journalism.com/en/how_to_use_r/"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/project_for_class/class-project/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
+
+How to a) get the files needed for each chapter in class and b) how to follow along with each chapter/code through.
+
+## Getting files and folders
+
+The files for this class will include the raw data, the scripts, and r markdown files.
+
+There are a few options to download them:
+
+### 1) Install the package I've created for this class
+
+Each chapter has a prompt to download the files assocaited with each one. 
+
+Hopefully, you've created a folder on your computer in your `Documents` folder called `learning-r` or something like that.
+
+Once you've set your working directory (with maybe `setwd()`) then you can run these commands in your console to download the correct folders and data:
+
+```{r install2, eval=F}
+install.packages("usethis")
+
+# This is for chapter 2 files and folders
+
+usethis::use_course("https://github.com/r-journalism/learn-chapter-2/archive/master.zip")
+
+```
+
+### 2) Download the entire repo off Github
+
+Each repo that begins with `learn-chapter-X` has files and folders for each chapter we're going through. You can clone or repo each one and open the .Rproj file in each of those folders to follow along.
+
+### 3) Follow from scratch
+
+Alternatively, you could create the files yourself from scratch with the correct folder structure. This is pretty tough for beginners but useful to really understand how project and folder structures work.
+
+* Create a new project in RStudio right now and call it learning-r-journalism
+* Save all your scripts and your data into here for now (ideally with an organized folder structure)
+* Data referenced in each chapter/sub-chapter can be downloaded individually from their respective repos 
+    * create new folders following the structure of the code in each walkthrough and place data downloaded from the repos as indicated
+
+----
+
+## Following the code through
+
+Each subchapter has a **.Rmd** file that contains the scripted code for each walkthrough.
+
+![](images/rmd_file.png?classes=shadow)
+
+This is an R Markdown file, which we will explain in detail in chapter 6.
+
+But for now, the important thing to understand is that it's a mix of markdown text and R code.
+
+The R code sections are indicated by the grayed out areas.
+
+![](images/r_chunks.png?classes=shadow)
+
+Each section can be executed with the green triangle button on the right.
+
+![](images/run_current_chunk.png?classes=shadow)
+
+If you get an error, it might be because you didn't run a chunk of code above. This is essentially an R script broken up into pieces and separated by text. Code depends on code executing above it successfully.
+
+Here's how to run code above a current chunk:
+
+![](images/run_chunks_above.png?classes=shadow)
+
+## The ideal way to follow along
+
+Do as much manually as you can.
+
+After you get the files and folders, open a new script file and write out the code written in each video and subchapter codethrough.
+
+Avoid just running code chunks in R Markdown.
+
+Avoid copying and pasting the code.
+
+Avoid passively learning.
+
+Manually typing out your code starts the muscle memory and problem solving training.
+
+**That being said**, if you get stuck, use that code that I've provided however you want.
+

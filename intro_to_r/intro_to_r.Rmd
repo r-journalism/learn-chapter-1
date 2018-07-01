@@ -1,21 +1,15 @@
 ---
 title: "Introduction to R"
-description: "Functions, syntax, directories, workspace, libraries"
 author: "Andrew Ba Tran"
-date: 2018-05-27T21:13:14-05:00
-categories: ["R"]
-tags: ["R", "introduction"]
-weight: 2
-slug: intro-to-r
+description: "https://learn.r-journalism.com/en/how_to_use_r/"
+output:
+  html_document:
+    toc: true
+    toc_float: true
 ---
 
-## Important points about R
+This is from the [first chapter](http://learn.r-journalism.com/enintro-to-r/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
 
-* *Functions* run everything
-  * *Functions* manipulate **objects**
-	* An **object** is anything that can be assigned to a variable name via `<-`operator
-	* This includes data structures, graphs, constants, and also other functions
-* All objects have a **class** which can affect how functions handle them
 
 ## Syntax
 
@@ -53,7 +47,7 @@ Make sure that slashes are forward slashes and that you don't forget the quotati
 
 Within RStudio, you can also set the working directory via the menu *Tools > Set Working Directory*
 
-<img src="/how_to_use_r/intro_to_r/images/setwd.png" alt="Set working directory", class="shadow", style="width:70%">
+<img src="images/setwd.png" alt="Set working directory", class="shadow", style="width:70%">
 
 ## Libraries
 
@@ -124,7 +118,7 @@ rm(list=ls())
 
 or click the "clear all" broom button in the workspace window.
 
-<img src="/how_to_use_r/intro_to_r/images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%">
+<img src="images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%">
 
 ## Scalars, vectors, and matrices
 
@@ -321,16 +315,18 @@ For example, Race might be input as "White", "Black", and "Hispanic"
 
 When importing that data in from a spreadsheet, R will most often interpret it as a **Factor**.
 
-```{r factor1, echo=F}
+Run these lines of code to create a new object, a dataframe called **sample_df**
+
+```{r factor1}
 sample_df <- data.frame(id=c(1001,1002,1003,1004), name=c("Steve", "Pam", "Jim", "Dwight"), age=c(26, 65, 15, 7), race=c("White", "Black", "White", "Hispanic"))
 sample_df$race <- factor(sample_df$race)
 sample_df$id <- factor(sample_df$id)
 sample_df$name <- as.character(sample_df$name)
 ```
 
-<img src="/how_to_use_r/intro_to_r/images/sample_df.png" alt="Set working directory", class="shadow", style="width:40%">
+<img src="images/sample_df.png" alt="Set working directory", class="shadow", style="width:40%">
 
-Let's take a look at the structure behind a dataframe I've included, called `sample_df`
+Let's take a look at the structure behind this new data frame.
 
 ```{r factor2}
 str(sample_df)
@@ -355,9 +351,7 @@ Why is this important to know?
 
 Journalists are less concerned by factors and will often find themselves converting factors to strings and characters. But when you reach the point that you are wanting to create models and linear regressions then you'll be happy that it's an option.
 
-{{% notice important %}}
-Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained.
-{{% /notice %}}
+*Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained.*
 
 ## Integers & Numbers
 
