@@ -1,0 +1,43 @@
+---
+title: "Setting a project folder for class"
+description: "Instructions on how to follow along with this class and get the right data"
+author: "Andrew Ba Tran"
+date: 2018-05-27T21:13:14-05:00
+categories: ["R"]
+tags: ["R", "projects", "workflow"]
+weight: 4
+slug: class-project
+---
+
+The files for this class will include the raw data, the scripts, and r markdown files.
+
+There are a few options to download them:
+
+1. Download the entire repo off Github
+2. Install the package I've created for this class
+
+```{r install, eval=F}
+install.packages("devtools")
+devtools::install_github("andrewbtran/lrj")
+```
+
+3. Follow the directions at the top of each following classes to install
+
+```{r install2, eval=F}
+library(lrj)
+install_chapter(1)
+```
+
+4. Or create the files yourself from scratch the correct folder structure
+    * Create a new project in RStudio right now and call it learning-r-journalism
+    * Save all your scripts and your data into here for now (ideally with an organized folder structure)
+
+----
+
+Even if the script with the correct exists on this website and in the downloaded files, type as much of the code I describe in the videos and on this site yourself. 
+
+Avoid copying and pasting the code because you’re passively learning.
+
+Do as much manually as you can. This starts the muscle memory and problem solving training.
+
+That being said, if you get stuck, all the scripts and code and proper folder structure is available to download. 
