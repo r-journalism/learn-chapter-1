@@ -1,11 +1,11 @@
 ---
 title: "Introduction to R"
 author: "Andrew Ba Tran"
-description: "https://learn.r-journalism.com/en/how_to_use_r/"
 output:
   html_document:
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
+description: https://learn.r-journalism.com/en/how_to_use_r/
 ---
 
 This is from the [first chapter](http://learn.r-journalism.com/enintro-to-r/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
@@ -20,7 +20,7 @@ You must follow pretty specific syntax rules for it to work. It won't guess for 
 * Comments are preceded by `#`
   * This is important to use often in your code for documentation
   * You'll see it often in this course
-* Statements are lines of code such as functions and object assigments
+* Statements are lines of code such as functions and object assignments
     * Enters in code or semi-colons will separate statements
 
 
@@ -71,7 +71,7 @@ R can be used as a calculator.
 Just type an equation in the command window after the `>`
 
 {{% notice note %}}
-In those code sections, the code preceeded by ## is the output of the code from the lines above.
+In those code sections, the code preceded by ## is the output of the code from the lines above.
 {{% /notice %}}
 
 ```{r calc}
@@ -116,7 +116,7 @@ To remove all variables from R's memory, type
 rm(list=ls())
 ```
 
-or click the "clear all" broom button in the workspace window.
+or click the "clear all" broom button in the work space window.
 
 <img src="images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%">
 
@@ -144,7 +144,7 @@ If you would like to compute the mean of all the elements in the vector `b` from
 
 But when the vector is very long, this is very boring and time-consuming work. 
 
-Thi is why things you do often are automated in so-called *functions*. Some functions are standard in R or in one of the pakages. You can also program your own functions.
+This is why things you do often are automated in so-called *functions*. Some functions are standard in R or in one of the packages. You can also program your own functions.
 
 When you use a function to compute a mean, you'll type
 
@@ -152,7 +152,7 @@ When you use a function to compute a mean, you'll type
 mean(x=b)
 ```
 
-Whithin the brackets you specify the *arguments*.
+Within the brackets you specify the *arguments*.
 
 Arguments give extra information to the function. In this case, the argument *x* says of which set of numbers (vector) the mean should computed (namely of b). 
 
@@ -189,7 +189,7 @@ This means that you have to type commands, rather than use the mouse and menus.
 
 This has the advantage that you do not always have to retype commands.
 
-You can store yoru commands in files, the so-called *scripts*. These scripts have typically file names with the extension **.R** as in **script.R**. 
+You can store your commands in files, the so-called *scripts*. These scripts have typically file names with the extension **.R** as in **script.R**. 
 
 You can open an editor window to edit these files by clicking *File > New* or *File > Open file...*
 
@@ -218,7 +218,7 @@ j <- c(1,2,NA)
 
 Computing statistics of incomplete data sets is strictly not possible.
 
-maybe the largest value occured during the weekend when you didn't measure. Therefore, R will say that it doesn't know what the largest value of `j` is
+maybe the largest value occurred during the weekend when you didn't measure. Therefore, R will say that it doesn't know what the largest value of `j` is
 
 ```{r na2}
 max(j)
@@ -249,7 +249,7 @@ sum(j, na.rm=T)
 
 We've been working so far with numbers.
 
-But sometimes data we work with can be specified as something else, like characters and strings or boolean values like **TRUE** or **FALSE** or dates.
+But sometimes data we work with can be specified as something else, like characters and strings or Boolean values like **TRUE** or **FALSE** or dates.
 
 ## Characters
 
@@ -259,7 +259,7 @@ m <- "apples"
 m
 ```
 
-To tell R that something is a character string, you should type the text between apostrophes, otherwise R will start looking for a defined veriable with the same name.
+To tell R that something is a character string, you should type the text between apostrophes, otherwise R will start looking for a defined variable with the same name.
 
 ```{r characters2, error=TRUE}
 n <- pears
@@ -286,7 +286,7 @@ date1
 
 A vector is created with `c()` and the numbers between the quotation marks are strings, because that's what the `strptim()` function requires.
 
-That's followed by the argument **format** that defines how the chracter string should be read. In this instance, the year is denoted first (%Y), then the month (%M) and second (%S). You don't have to specify all of them, as long as the format corresponds to the character string.
+That's followed by the argument **format** that defines how the character string should be read. In this instance, the year is denoted first (%Y), then the month (%M) and second (%S). You don't have to specify all of them, as long as the format corresponds to the character string.
 
 
 
@@ -315,10 +315,11 @@ For example, Race might be input as "White", "Black", and "Hispanic"
 
 When importing that data in from a spreadsheet, R will most often interpret it as a **Factor**.
 
-Run these lines of code to create a new object, a dataframe called **sample_df**
+Run these lines of code to create a new object, a data frame called **sample_df**
 
 ```{r factor1}
-sample_df <- data.frame(id=c(1001,1002,1003,1004), name=c("Steve", "Pam", "Jim", "Dwight"), age=c(26, 65, 15, 7), race=c("White", "Black", "White", "Hispanic"))
+sample_df <- data.frame(id=c(1001,1002,1003,1004), name=c("Steve", "Pam", "Jim", "Dwight"), 
+                        age=c(26, 65, 15, 7), race=c("White", "Black", "White", "Hispanic"))
 sample_df$race <- factor(sample_df$race)
 sample_df$id <- factor(sample_df$id)
 sample_df$name <- as.character(sample_df$name)
@@ -355,7 +356,7 @@ Journalists are less concerned by factors and will often find themselves convert
 
 ## Integers & Numbers
 
-Self-explanatory. Saves as whole numbers or nummbers.
+Self-explanatory. Saves as whole numbers or numbers.
 
 ## Converting between the different types
 

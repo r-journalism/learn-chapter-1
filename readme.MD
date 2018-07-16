@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 ## Chapter 1
 
 These files and folders are meant to accompany the first chapter from the learn.r-journalism.com class.
@@ -40,24 +45,33 @@ Navigate to the .rmd files for each sub-chapter to open and follow along with ea
 
 Or you can execute the following commands in the console to bring up the files.
 
-* `file.edit("initial_exploration/initial_exploration.Rmd")`
+* `file.edit("tour_rstudio/tour_rstudio.Rmd")`
 * `file.edit("intro_to_r/intro_to_r.Rmd")`
+* `file.edit("initial_exploration/initial_exploration.Rmd")`
 * `file.edit("project_for_class/project_for_class.Rmd")`
 * `file.edit("syntax/syntax.Rmd")`
-* `file.edit("tour_rstudio/tour_rstudio.Rmd")`
 
 To view the local html version of the .rmd files, you can try the following commands in your console to see rendered version of the sub-chapter:
 
+* `browseURL("tour_rstudio/tour_rstudio.html")`
+
+* `browseURL("intro_to_r/intro_to_r.html")`
 
 * `browseURL("initial_exploration/initial_exploration.html")`
-* `browseURL("intro_to_r/intro_to_r.html")`
 * `browseURL("project_for_class/project_for_class.html")`
 * `browseURL("syntax/syntax.html")`
-* `browseURL("tour_rstudio/tour_rstudio.html")`
 
 ----
 
 ## Test yourself
+
+
+There are links to exercise what you've learned spread through out this section.
+
+It's possible to run these files locally to test yourself if you've downloaded the files for the chapter as instructed above.
+
+Make sure your project directory is correct and then run these lines in the console:
+
 
 ```
 install.packages("learnr")

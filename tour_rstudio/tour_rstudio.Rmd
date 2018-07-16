@@ -1,11 +1,11 @@
 ---
 title: "RStudio guide"
 author: "Andrew Ba Tran"
-description: "https://learn.r-journalism.com/en/how_to_use_r/"
 output:
   html_document:
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
+description: https://learn.r-journalism.com/en/how_to_use_r/
 ---
 
 This is from the [first chapter](http://learn.r-journalism.com/enrstudio-tour/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
@@ -25,7 +25,7 @@ These sections can be customized and placed wherever you want through the RStudi
 
 ![](images/left.png?classes=shadow)
 
-The tall section on the left is the *console* and thta's where you can type in R code to execute.
+The tall section on the left is the *console* and that's where you can type in R code to execute.
 
 This code is also called *commands* or *functions*.
 
@@ -50,12 +50,12 @@ It's good practice write R code into separate files called *scripts*.
 All R commands can be saved in a script and executed later when the script is run.
 
 {{% notice note %}}
-Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger datasets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.
+Reproducible research is the idea that data analyses, and more generally, scientific claims, are published with their data and software code so that others may verify the findings and build upon them. The need for reproducibility is increasing dramatically as data analyses become more complex, involving larger data sets and more sophisticated computations. Reproducibility allows for people to focus on the actual content of a data analysis, rather than on superficial details reported in a written summary. In addition, reproducibility makes an analysis more useful to others because the data and code that actually conducted the analysis are available.
 {{% /notice %}}
 
 ![](images/four-panes.png?classes=shadow)
 
-These R source code files can be viewed in a **Source** section and pushes the console window down to accomodate. 
+These R source code files can be viewed in a **Source** section and pushes the console window down to accommodate. 
 
 To create a new script go through the menu *File > New File > R Script* or through the green plus button on the top left.
 

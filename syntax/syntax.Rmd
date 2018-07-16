@@ -1,11 +1,11 @@
 ---
 title: "R basics, help, mistakes"
 author: "Andrew Ba Tran"
-description: "https://learn.r-journalism.com/en/how_to_use_r/"
 output:
   html_document:
-    toc: true
-    toc_float: true
+    toc: yes
+    toc_float: yes
+description: https://learn.r-journalism.com/en/how_to_use_r/
 ---
 
 This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/syntax/r-syntax/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
@@ -19,7 +19,7 @@ This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/s
 * `|` means OR, in Boolean logic
 * `!` means NOT, in Boolean logic
 * When referring to values entered as text, or to dates, put them in quote marks like this: `"United States"`, or `"2016-07-26"`. Numbers are not quoted
-* When entering two or more values as a list, combine them using the function `c`, for combine, with the values separated by commas, for exmaple: `c:("2017-07-26", "2017-08-04")`
+* When entering two or more values as a list, combine them using the function `c`, for combine, with the values separated by commas, for example: `c:("2017-07-26", "2017-08-04")`
 * As in a spreadsheet, you can specify a range of values with a colon, for example: `c(1:10)` creates a list of integers (whole numbers) from one to ten.
 * Some common operators:
 	* `+` `-` add, subtract
@@ -51,11 +51,11 @@ Object and variable names in R should not contain spaces
 | Function | Action |
 | ------ | -------------------------------------------------- |
 | `getwd()`   | List current working directory |
-| `setwd("mydirectory")` | Change the current working directory to mydirectory |
-| `ls()`    | List the objects in the current workspace |
+| `setwd("mydirectory")` | Change the current working directory to my directory |
+| `ls()`    | List the objects in the current work space |
 | `rm(object)`    | Delete object |
 | `save(objectlist, file="myfile)`    | Save specific objects to a file |
-| `load("myfile")`    | Load a workspace into the current session (default = .RData) |
+| `load("myfile")`    | Load a work space into the current session (default = .RData) |
 
 ## Packages
 
