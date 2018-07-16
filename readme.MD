@@ -56,3 +56,17 @@ To view the local html version of the .rmd files, you can try the following comm
 * `browseURL("tour_rstudio/tour_rstudio.html")`
 
 ----
+
+## Test yourself
+
+```
+install.packages("learnr")
+install.packages("rmarkdown")
+install.packages("tidyverse")
+```
+
+and then
+
+```
+rmarkdown::run("chapter-1/index.Rmd")
+```
