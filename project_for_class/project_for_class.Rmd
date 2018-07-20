@@ -2,15 +2,16 @@
 title: "Setting up for this class"
 author: "Andrew Ba Tran"
 output:
-  pdf_document:
-    toc: yes
   html_document:
     toc: yes
     toc_float: yes
+  pdf_document:
+    toc: yes
 description: https://learn.r-journalism.com/en/how_to_use_r/
 ---
 
 This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/project_for_class/class-project/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
+
 
 How to a) get the files needed for each chapter in class and b) how to follow along with each chapter/code through.
 
@@ -24,7 +25,7 @@ There are a few options to download them:
 
 Each chapter has a prompt to download the files associated with each one. 
 
-Hopefully, you've created a folder on your computer in your `Documents` folder called `learning-r` or something like that.
+Hopefully, you've created a **New Project** on your computer in your `Documents` folder called `learning-r` or something like that. This will create a *.rProj* file and keep the working directory relative to that folder and all data and scripts should go in there.
 
 Once you've set your working directory (with maybe `setwd()`) then you can run these commands in your console to download the correct folders and data:
 
@@ -36,6 +37,8 @@ install.packages("usethis")
 usethis::use_course("https://github.com/r-journalism/learn-chapter-2/archive/master.zip")
 
 ```
+
+These project files work because the working directory will be **relative** to the project/chapter folder and not to an **absolute** folder path. Double click the *.rProj* file in each project/chapter folder to open it in RStudio.
 
 ### 2) Download the entire repo off Github
 
@@ -56,7 +59,10 @@ Alternatively, you could create the files yourself from scratch with the correct
 
 Each sub chapter has a **.Rmd** file that contains the scripted code for each walk through.
 
-![](images/rmd_file.png?classes=shadow)
+```{r img1, echo=F, out.width='100%'}
+library(knitr)
+include_graphics("images/rmd_file.png")
+```
 
 This is an R Markdown file, which we will explain in detail in chapter 6.
 
@@ -64,23 +70,34 @@ But for now, the important thing to understand is that it's a mix of markdown te
 
 The R code sections are indicated by the grayed out areas.
 
-![](images/r_chunks.png?classes=shadow)
+
+```{r img2, echo=F, out.width='100%'}
+include_graphics("images/r_chunks.png")
+```
+
 
 Each section can be executed with the green triangle button on the right.
 
-![](images/run_current_chunk.png?classes=shadow)
+
+```{r img3, echo=F, out.width='100%'}
+include_graphics("images/run_current_chunk.png")
+```
 
 If you get an error, it might be because you didn't run a chunk of code above. This is essentially an R script broken up into pieces and separated by text. Code depends on code executing above it successfully.
 
 Here's how to run code above a current chunk:
 
-![](images/run_chunks_above.png?classes=shadow)
+```{r img4, echo=F, out.width='100%'}
+include_graphics("images/run_chunks_above.png")
+```
+
 
 ## The ideal way to follow along
 
+
 Do as much manually as you can.
 
-After you get the files and folders, open a new script file and write out the code written in each video and sub chapter code through.
+After you get the files and folders, open a new script file and write out the code written in each video and sub chapter code through. An R script of only the code for each section is also in each folder. Avoid using that unless you have to.
 
 Avoid just running code chunks in R Markdown.
 
@@ -91,4 +108,3 @@ Avoid passively learning.
 Manually typing out your code starts the muscle memory and problem solving training.
 
 **That being said**, if you get stuck, use that code that I've provided however you want.
-

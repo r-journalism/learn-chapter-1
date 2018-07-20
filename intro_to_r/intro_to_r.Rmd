@@ -8,29 +8,32 @@ output:
 description: https://learn.r-journalism.com/en/how_to_use_r/
 ---
 
-This is from the [first chapter](http://learn.r-journalism.com/enintro-to-r/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
+This is from the [first chapter](http://learn.r-journalism.com/en/how_to_use_r/tour_rstudio/intro-to-r/) of [learn.r-journalism.com](https://learn.r-journalism.com/).
 
 
 ## Syntax
 
-You must follow pretty specific syntax rules for it to work. It won't guess for you.
+You must follow pretty specific syntax rules for it to work. R won't guess for you.
 
-* R is a case-sensitive interpreted language
+* R is case-sensitive (unlike SQL) [intepreted language](https://en.wikipedia.org/wiki/Interpreted_language) (unlike C)
 * Can enter commands at prompt `>` or in batch
 * Comments are preceded by `#`
-  * This is important to use often in your code for documentation
-  * You'll see it often in this course
+    * This is important to use often in your code for documentation
+    * You'll see it often in this course
 * Statements are lines of code such as functions and object assignments
-    * Enters in code or semi-colons will separate statements
+    * Enters in code (as in a new line) or semi-colons will separate statements
 
 
 ## Working directories
 
 Your *working directory* is the folder on your computer in which you are currently working. When you ask R to open a certain file, it will look in the working directory for this file, and when you tell R to save a data file or figure, it will save it in the working directory.
 
-Before you start working, please set your working directory tow here all your data and script files are or should be stored.
+Before you start working, please set your working directory to where all your data and script files are or should be stored.
 
-Type in the command window:
+**Tip**: When you see code in a black box throughout this class, **I want you to run that code in R unless noted otherwise**. You can run it in the console, I'd prefer you do so in a script so you can see your history. In the video, you'll see me swap back and forth between coding in the console and the script. This really depends on if I'm experimenting with code quickly or if it's something I know I should track. Often I will copy and paste code executed from the console to growing script as an afterthought. Also, **be sure to read the commented out code** because I try to give additional context, like tips on what to do if the command fails.
+
+
+This is an example of setting a working directory to a manual directory on your computer.
 
 ```{r setwd, eval=F, warning=F, message=F}
 # On a mac, it'd look like this
@@ -40,27 +43,41 @@ setwd("~/projects/learn-r-journalism")
 setwd("C:/Documents/learn-r-journalism")
 ```
 
-
-{{% notice note %}}
-Make sure that slashes are forward slashes and that you don't forget the quotation marks.
-{{% /notice %}}
+**Note**: Make sure that slashes are forward slashes and that you don't forget the quotation marks.
 
 Within RStudio, you can also set the working directory via the menu *Tools > Set Working Directory*
 
-<img src="images/setwd.png" alt="Set working directory", class="shadow", style="width:70%">
+```{r img2, echo=F, out.width='100%'}
+library(knitr)
+include_graphics("images/setwd.png")
+```
+
+
+
+The commands above, `setwd()` was an example of setting an **absolute** folder.
+
+This works for you for now, but if you wanted to share your methodology and script in the future or if you wanted to save run the code on another computer it would likely **not** work because it would be looking through a folder structure that doesn't exist on any computer except the one where the original script was written. This is not ideal for reproducibility.
+
+
+Working directories are a tough concept. We'll be going over best practices in [Chapter 6](https://learn.r-journalism.com/en/publishing/) in more detail. Meanwhile, here's a link that might [help explain](https://wangfanghelsinki.wordpress.com/2015/03/31/understanding-and-setting-rstudio-working-directory/) some more.
+
 
 ## Libraries
 
 R can do many statistical and data analyses.
 
-They are organized in so-called *packages* or *libraries*. With the standard installation (known as **base**), most common packages are installed.
+They are organized in so-called *packages* or *libraries*. 
+
+You can do a lot of statistical analysis in R without any additional libraries— this is called base R. 
+
+But other users have created libraries with functions that solve common problems. R package users download only the libraries that they need for an individual project
 
 To get a list of all installed packages, go to the packages window or type `library()` in the console window. If the box in front of the package name is ticked in the packages window, the package is loaded and the functions within it are ready to be called.
 
 There are many more packages available on the R website. If you want to install and use a package (for example, the packaged called "dplyr") you should:
 
-* Install the package: click `install packages` in the packages window and type `dplyr` or type `install.packages("dplyr")` in the command window.
-* Load the package: Check box in front of `dplyr` or type `library("dplyr")` in the command window.
+* Install the package: click `install packages` in the packages window and type `dplyr` or type `install.packages("dplyr")` in the console window.
+* Load the package: Check box in front of `dplyr` or type `library("dplyr")` in the console window.
 
 # Examples of R commands
 
@@ -68,11 +85,9 @@ There are many more packages available on the R website. If you want to install 
 
 R can be used as a calculator.
 
-Just type an equation in the command window after the `>`
+Just type an equation in the console window after the `>`
 
-{{% notice note %}}
-In those code sections, the code preceded by ## is the output of the code from the lines above.
-{{% /notice %}}
+**Note**: In those code sections, the code preceded by ## is the output of the code from the lines above.
 
 ```{r calc}
 10^2 + 26
@@ -118,11 +133,14 @@ rm(list=ls())
 
 or click the "clear all" broom button in the work space window.
 
-<img src="images/clear_objects.png" alt="Set working directory", class="shadow", style="width:70%">
+```{r img3, echo=F, out.width='100%'}
+library(knitr)
+include_graphics("images/clear_objects.png")
+```
 
-## Scalars, vectors, and matrices
+## Scalars and vectors
 
-Like in many other programs, R organizes numbers in *scalars* (a single number 0-dimensional), *vectors* (a row of numbers, also called arrays - `-dimensional) and *matrices* (like a table - 2-dimensional).
+Like in many other programs, R organizes numbers in *scalars* (a single number 0-dimensional), *vectors* (a row of numbers, also called arrays - `-dimensional) and *matrices* (which we won't get into now).
 
 The `a` you defined was scalar. 
 
@@ -144,9 +162,9 @@ If you would like to compute the mean of all the elements in the vector `b` from
 
 But when the vector is very long, this is very boring and time-consuming work. 
 
-This is why things you do often are automated in so-called *functions*. Some functions are standard in R or in one of the packages. You can also program your own functions.
+Functions do things to data. R is built on them. Some functions come with R, like `median()` or `summary()` and others come as part of packages that others have created.
 
-When you use a function to compute a mean, you'll type
+When you use a function to compute an average, you'll type
 
 ```{r mean_two}
 mean(x=b)
@@ -203,12 +221,14 @@ For example, to run the entire saved **script.R** if it's in the root directory 
 source("script.R")
 ```
 
+The line above won't work because there isn't actually an R script called script.R in the directory.
+
 You can also click *Run all* in the editor window or type **CTRL+SHIFT+S** or *CMD+SHIFT+S*
 
 
 ## Not available data
 
-When you work with real data, you will encounter missing values because instrumentation failed or because you didn't want to measure in the weekend.
+When you work with real data, you will encounter missing values because instrumentation failed or human error.
 
 When a data is *not available*, you write `NA` instead of a number.
 
@@ -233,9 +253,7 @@ max(j, na.rm=T)
 
 
 
-{{% notice warning %}}
-`NA`s will also affect any sort of math if you're not careful
-{{% /notice %}}
+**Warning**: `NA`s will also affect any sort of math if you're not careful
 
 
 ```{r na4}
@@ -244,8 +262,9 @@ sum(j)
 sum(j, na.rm=T)
 ```
 
+Here are [some](http://faculty.nps.edu/sebuttre/home/R/missings.html) [links](https://datascienceplus.com/missing-values-in-r/) on how to [handle](https://stats.idre.ucla.edu/r/faq/how-does-r-handle-missing-values/) `NA`s in your data
 
-# Classes
+# Data types
 
 We've been working so far with numbers.
 
@@ -302,6 +321,8 @@ library(lubridate)
 date1 <- ymd_hms(c("20100225230000", "20100226000000", "20100226010000"))
 ```
 
+The function `ymd_hms()` converted the year, month, date and hour, minutes, and seconds in the string. We'll go over this in more detail in [Chapter 3](http://learn.r-journalism.com/en/wrangling/dates/dates/).
+
 ## Factors
 
 Complicated. 
@@ -315,7 +336,7 @@ For example, Race might be input as "White", "Black", and "Hispanic"
 
 When importing that data in from a spreadsheet, R will most often interpret it as a **Factor**.
 
-Run these lines of code to create a new object, a data frame called **sample_df**
+Run these lines of code to create a new object, a dataframe called **sample_df**
 
 ```{r factor1}
 sample_df <- data.frame(id=c(1001,1002,1003,1004), name=c("Steve", "Pam", "Jim", "Dwight"), 
@@ -325,9 +346,11 @@ sample_df$id <- factor(sample_df$id)
 sample_df$name <- as.character(sample_df$name)
 ```
 
-<img src="images/sample_df.png" alt="Set working directory", class="shadow", style="width:40%">
+```{r img4, echo=F, out.width='100%'}
+include_graphics("images/sample_df.png")
+```
 
-Let's take a look at the structure behind this new data frame.
+Let's take a look at the structure behind a dataframe we've created.
 
 ```{r factor2}
 str(sample_df)
@@ -352,11 +375,17 @@ Why is this important to know?
 
 Journalists are less concerned by factors and will often find themselves converting factors to strings and characters. But when you reach the point that you are wanting to create models and linear regressions then you'll be happy that it's an option.
 
-*Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained.*
+**Tip**: Most odd quirks when it comes to R can be traced back to the fact that R was created by and for statisticians. R has grown a lot since then and the community has helped make it evolve to handle data the way we are more used to. But some habits die hard and are ingrained.
+
 
 ## Integers & Numbers
 
-Self-explanatory. Saves as whole numbers or numbers.
+These are what they sound like, whole or decimal numbers that can be used in calculations
+
+R doesn’t handle units properly if they are combined with numbers. 
+
+For example, "4in" will be treated as a string and not as 4.
+
 
 ## Converting between the different types
 
@@ -394,8 +423,11 @@ sample_df$id
 as.numeric(as.character(sample_df$id))
 ```
 
+**Tip**: It's okay if you don't fully understand this next section. It's pretty advanced. I give you permission to skip down to **Your turn:**.
 
-# Functions
+
+
+## Revisiting Functions
 
 You can also save code you've written that simplifies your process into a function.
 
@@ -429,9 +461,12 @@ Here's what happens when I pass a string to my `percent_change()` function.
 percent_change("what", "happens")
 ```
 
+
+**This is the point: **
+
 Sometimes really great R programmers will anticipate errors and catch bad inputs and try to output helpful suggestions instead of a generic error.
 
-This particular error isn't very explicit. It needs to be interpreted but **you** know that the function needs numbers to work correctly.
+This particular error isn't very explicit. It needs to be interpreted but **you** know that the function needs numbers to work correctly because you created it.
 
 New users might not know that intuitively.
 
@@ -446,4 +481,12 @@ When we're coding and sharing it for others we can't anticipate all the ways in 
 Shoot the function writer a message or if you wrote the package, welcome feedback from others.
 
 This is what makes participating in the R community so great. We just want to do better.
+
+## Your turn
+
+Challenge yourself with [these exercises](http://code.r-journalism.com/chapter-1/#section-intro-to-r) so you'll retain the knowledge of this section.
+
+Instructions on how to run the exercise app are in the [intro page](http://learn.r-journalism.com/en/how_to_use_r/) to this section.
+
+
 
