@@ -7,6 +7,15 @@ output:
 
 These files and folders are meant to accompany the first chapter from the learn.r-journalism.com class.
 
+PDFs, r markdown files, and r scripts representing each lesson are provided. There are also exercises to practice the code you’ve learned.
+ 
+There is no “correct” way to follow along with this course aside from the quiz and completing the assignments in the discussion forums.
+ 
+Approach these lessons at your own pace and with whichever combination works best for your situation.
+ 
+----
+
+
 The quickest way to access the data for this chapter is to 1) make sure your current project directory is logically organized. 
 
 Hopefully, you've created folder on your computer in your `Documents` folder called `learning-r` or something like that.
