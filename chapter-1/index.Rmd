@@ -8,8 +8,6 @@ output:
     progressive: true
     theme: lumen
     highlight: espresso
-    include:
-      before_body: _navbar.html
 runtime: shiny_prerendered
 ---
 
@@ -18,6 +16,12 @@ runtime: shiny_prerendered
 library(learnr)
 library(tidyverse)
 knitr::opts_chunk$set(echo = FALSE)
+years <- c(301, 978, 101)
+burgers <- data.frame(id=c(60006,60007,60008,60009, 60010), name=c("Bob", "Linda", "Louise", "Tina", "Gene"), age=c(45, 44, 12, 13, 11), shirt=c("White", "Red", "Pink", "Blue", "Yellow"))
+burgers$shirt<- factor(burgers$shirt)
+burgers$id <- factor(burgers$id)
+burgers$name <- as.character(burgers$name)
+
 ```
 
 
@@ -52,9 +56,6 @@ years
 
 ### Functions
 
-```{r years_array, include=FALSE}
-years <- c(301, 978, 101)
-```
 
 What's the average of the array of numbers assigned to "years"?
 
@@ -63,13 +64,6 @@ What's the average of the array of numbers assigned to "years"?
 ```
 
 ### Classes
-
-```{r factors_df, include=FALSE}
-burgers <- data.frame(id=c(60006,60007,60008,60009, 60010), name=c("Bob", "Linda", "Louise", "Tina", "Gene"), age=c(45, 44, 12, 13, 11), shirt=c("White", "Red", "Pink", "Blue", "Yellow"))
-burgers$shirt<- factor(burgers$shirt)
-burgers$id <- factor(burgers$id)
-burgers$name <- as.character(burgers$name)
-```
 
 Take a look at the structure of **burgers**:
 
