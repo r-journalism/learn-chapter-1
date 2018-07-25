@@ -5,13 +5,13 @@ tutorial:
   version: .85
 output:
   learnr::tutorial:
-    fig_caption: no
     progressive: true
     theme: lumen
     highlight: espresso
+    include:
+      before_body: _navbar.html
 runtime: shiny_prerendered
 ---
-
 
 ```{r setup, include=FALSE}
 library(learnr)
@@ -157,7 +157,7 @@ burgers
 </div>
 
 ```{r v1-check}
-burgers[,3]
+burgers[,4]
 ``` 
 
 
