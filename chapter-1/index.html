@@ -49,37 +49,53 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="section-objects" class="section level3">
 <h3>Objects</h3>
 <p>Assign the number 17 to the object <strong>ub</strong></p>
-<div class="tutorial-exercise" data-label="object" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>ub    
+<div class="tutorial-exercise" data-label="filter" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>ub
 
 ub</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="filter-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>ub &lt;- 17
+
+ub</code></pre>
 </div>
 </div>
 <div id="section-array" class="section level3">
 <h3>Array</h3>
 <p>Create an array of numbers: 301, 978, and 101.</p>
 <p>Assign it to the object “years”</p>
-<div class="tutorial-exercise" data-label="arrays" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code>years #replace this with your code
+<div class="tutorial-exercise" data-label="y1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>years #replace this with your code and delete this comment before submitting
 
 years</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="y1-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>years &lt;- c(301, 978, 101)
+
+years</code></pre>
 </div>
 </div>
 <div id="section-functions" class="section level3">
 <h3>Functions</h3>
 <p>What’s the average of the array of numbers assigned to “years”?</p>
-<div class="tutorial-exercise" data-label="average" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<div class="tutorial-exercise" data-label="a1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
 <pre class="text"><code>(years)</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="a1-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>mean(years)</code></pre>
 </div>
 </div>
 <div id="section-classes" class="section level3">
 <h3>Classes</h3>
 <p>Take a look at the structure of <strong>burgers</strong>:</p>
-<div class="tutorial-exercise" data-label="structure" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<div class="tutorial-exercise" data-label="st1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="st1-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>str(burgers)</code></pre>
 </div>
 <div class="panel panel-default">
 <div class="panel-heading tutorial-panel-heading">Quiz</div>
@@ -87,14 +103,14 @@ years</code></pre>
 <tr>
 <td>
 
-<div id="htmlwidget-e088cca0b3e19cc0771e" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-b787f61ef609b8fb9d47" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-e088cca0b3e19cc0771e">{"x":{"question":"What kind of class is the variable id?","answers":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"label":"first_quiz-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":true,"json":{"info":{"name":"","main":""},"questions":[{"q":"What kind of class is the variable id?","a":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-b787f61ef609b8fb9d47">{"x":{"question":"What kind of class is the variable id?","answers":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"label":"first_quiz-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":true,"json":{"info":{"name":"","main":""},"questions":[{"q":"What kind of class is the variable id?","a":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </table>
@@ -111,130 +127,192 @@ years</code></pre>
 {"columns":[{"label":["id"],"name":[1],"type":["fctr"],"align":["left"]},{"label":["name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["age"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["shirt"],"name":[4],"type":["fctr"],"align":["left"]}],"data":[{"1":"60006","2":"Bob","3":"45","4":"White"},{"1":"60007","2":"Linda","3":"44","4":"Red"},{"1":"60008","2":"Louise","3":"12","4":"Pink"},{"1":"60009","2":"Tina","3":"13","4":"Blue"},{"1":"60010","2":"Gene","3":"11","4":"Yellow"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p>How do you refer to the the <em>shirt</em> variable/column with []?</p>
-<div class="tutorial-exercise" data-label="variable1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Add to the line below
+<p>How do you refer to the the <em>shirt</em> variable/column with <strong>[]</strong>?</p>
+<div class="tutorial-exercise" data-label="v1" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code># Add to the line below and delete this comment before submitting
 
 burgers</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div id="section-v1-hint">
+<p><strong>Hint:</strong> Delete the commented line out before submitting.</p>
+</div>
+<div class="tutorial-exercise-support" data-label="v1-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>burgers[,3]</code></pre>
 </div>
 <p>How do you refer to the the <em>shirt</em> variable/column with $?</p>
-<div class="tutorial-exercise" data-label="variable2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Add to the line below
+<div class="tutorial-exercise" data-label="v2" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code># Add to the line below and delete this comment before submitting
 
 burgers</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="v2-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>burgers$shirt</code></pre>
+</div>
+<div id="section-v2-hint">
+<p><strong>Hint:</strong> Delete the commented line out before submitting.</p>
 </div>
 </div>
 <div id="section-pulling-a-row-of-data" class="section level3">
 <h3>Pulling a row of data</h3>
 <p>Extract entire row for Linda using [].</p>
-<div class="tutorial-exercise" data-label="variable4" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Add to the line below
+<div class="tutorial-exercise" data-label="v4" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code># Add to the line below and delete this comment before submitting
 
-    burgers</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+burgers</code></pre>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="v4-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>burgers[2,]</code></pre>
+</div>
+<div id="section-v4-hint">
+<p><strong>Hint:</strong> Delete the commented line out before submitting.</p>
 </div>
 </div>
 <div id="section-converting-data-classes" class="section level3">
 <h3>Converting data classes</h3>
 <p>Convert the <em>id</em> variable of the <strong>burgers</strong> data frame to numeric.</p>
-<div class="tutorial-exercise" data-label="variable3" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Add to the line below
+<div class="tutorial-exercise" data-label="v3" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code># Add to the line below and delete this comment before submitting
 
-burgers</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+burgers$id &lt;- 
+
+burgers$id
+class(burgers$id)</code></pre>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="v3-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>burgers$id &lt;- as.numeric(as.character(burgers$id))
+
+burgers$id
+class(burgers$id)</code></pre>
+</div>
+<div id="section-v3-hint">
+<p><strong>Hint:</strong> Delete the commented line out before submitting.</p>
 </div>
 </div>
 <div id="section-boolean-logic" class="section level3">
 <h3>Boolean logic</h3>
 <p>Check if Gene’s age is 11.</p>
 <p><em>Note:</em> Is the answer the same as above (correct) or is it 1-5 (false)?</p>
-<div class="tutorial-exercise" data-label="boolean" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
-<pre class="text"><code># Modify the line of code below
+<div class="tutorial-exercise" data-label="b" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code># Modify the line of code below and delete this comment before submitting
 
 age_test &lt;- burgers$age[5]    11
 
 age_test</code></pre>
-<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":60,"exercise.checker":"NULL"}</script>
+<script type="application/json" data-opts-chunk="1">{"fig.width":6.5,"fig.height":4,"fig.retina":2,"fig.align":"default","fig.keep":"high","fig.show":"asis","out.width":624,"warning":true,"error":false,"message":true,"exercise.df_print":"paged","exercise.timelimit":30,"exercise.checker":["function (label, user_code, check_code, envir_result, evaluate_result, ","    ...) ","{","    if (is_bad_code(user_code, check_code, envir_result)) {","        return(list(message = \"Code wasn't right!\", correct = FALSE, ","            location = \"append\"))","    }","    else {","        return(list(message = \"Great Job!\", correct = TRUE, location = \"append\"))","    }","}"]}</script>
+</div>
+<div class="tutorial-exercise-support" data-label="b-check" data-caption="Code" data-completion="1" data-diagnostics="1" data-startover="1" data-lines="0">
+<pre class="text"><code>age_test &lt;- burgers$age[5] ==   11
+
+age_test</code></pre>
+</div>
+<div id="section-b1-hint">
+<p><strong>Hint:</strong> Delete the commented line out before submitting.</p>
 </div>
 
 <script type="application/shiny-prerendered" data-context="server-start">
 library(learnr)
 library(tidyverse)
+library(checkr)
+
 knitr::opts_chunk$set(echo = FALSE)
+
 years <- c(301, 978, 101)
 burgers <- data.frame(id=c(60006,60007,60008,60009, 60010), name=c("Bob", "Linda", "Louise", "Tina", "Gene"), age=c(45, 44, 12, 13, 11), shirt=c("White", "Red", "Pink", "Blue", "Yellow"))
 burgers$shirt<- factor(burgers$shirt)
 burgers$id <- factor(burgers$id)
 burgers$name <- as.character(burgers$name)
 
+nospace <- function(a) {
+  b <- gsub(" ","",a) 
+  gsub("\\n", "", b)
+}
+
+is_bad_code <- function(user_code, check_code, envir_result) {
+  eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
+}
+
+checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
+  if (is_bad_code(user_code, check_code, envir_result)) {
+    return(list(message = "Code wasn't right!", correct = FALSE, location = "append"))
+  } else {
+    return(list(message = "Great Job!", correct = TRUE, location = "append"))
+  }
+}  
+
+tutorial_options(exercise.timelimit = 30, exercise.checker = checker)
+#tutorial_options(exercise.checker = checkthat::check_exercise)
+
+
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-learnr:::register_http_handlers(session, metadata = list(id = "code.r-journalism/chapter-1", version = 0.8))
+learnr:::register_http_handlers(session, metadata = list(id = "code.r-journalism/chapter-1", version = 0.85))
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-object-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-object-code-editor`)), session)
-output$`tutorial-exercise-object-output` <- renderUI({
-  `tutorial-exercise-object-result`()
+`tutorial-exercise-filter-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-filter-code-editor`)), session)
+output$`tutorial-exercise-filter-output` <- renderUI({
+  `tutorial-exercise-filter-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-arrays-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-arrays-code-editor`)), session)
-output$`tutorial-exercise-arrays-output` <- renderUI({
-  `tutorial-exercise-arrays-result`()
+`tutorial-exercise-y1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-y1-code-editor`)), session)
+output$`tutorial-exercise-y1-output` <- renderUI({
+  `tutorial-exercise-y1-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-average-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-average-code-editor`)), session)
-output$`tutorial-exercise-average-output` <- renderUI({
-  `tutorial-exercise-average-result`()
+`tutorial-exercise-a1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-a1-code-editor`)), session)
+output$`tutorial-exercise-a1-output` <- renderUI({
+  `tutorial-exercise-a1-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-structure-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-structure-code-editor`)), session)
-output$`tutorial-exercise-structure-output` <- renderUI({
-  `tutorial-exercise-structure-result`()
+`tutorial-exercise-st1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-st1-code-editor`)), session)
+output$`tutorial-exercise-st1-output` <- renderUI({
+  `tutorial-exercise-st1-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-variable1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-variable1-code-editor`)), session)
-output$`tutorial-exercise-variable1-output` <- renderUI({
-  `tutorial-exercise-variable1-result`()
+`tutorial-exercise-v1-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-v1-code-editor`)), session)
+output$`tutorial-exercise-v1-output` <- renderUI({
+  `tutorial-exercise-v1-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-variable2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-variable2-code-editor`)), session)
-output$`tutorial-exercise-variable2-output` <- renderUI({
-  `tutorial-exercise-variable2-result`()
+`tutorial-exercise-v2-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-v2-code-editor`)), session)
+output$`tutorial-exercise-v2-output` <- renderUI({
+  `tutorial-exercise-v2-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-variable4-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-variable4-code-editor`)), session)
-output$`tutorial-exercise-variable4-output` <- renderUI({
-  `tutorial-exercise-variable4-result`()
+`tutorial-exercise-v4-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-v4-code-editor`)), session)
+output$`tutorial-exercise-v4-output` <- renderUI({
+  `tutorial-exercise-v4-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-variable3-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-variable3-code-editor`)), session)
-output$`tutorial-exercise-variable3-output` <- renderUI({
-  `tutorial-exercise-variable3-result`()
+`tutorial-exercise-v3-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-v3-code-editor`)), session)
+output$`tutorial-exercise-v3-output` <- renderUI({
+  `tutorial-exercise-v3-result`()
 })
 </script>
  
 <script type="application/shiny-prerendered" data-context="server">
-`tutorial-exercise-boolean-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-boolean-code-editor`)), session)
-output$`tutorial-exercise-boolean-output` <- renderUI({
-  `tutorial-exercise-boolean-result`()
+`tutorial-exercise-b-result` <- learnr:::setup_exercise_handler(reactive(req(input$`tutorial-exercise-b-code-editor`)), session)
+output$`tutorial-exercise-b-output` <- renderUI({
+  `tutorial-exercise-b-result`()
 })
 </script>
  <!--html_preserve-->

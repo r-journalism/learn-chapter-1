@@ -2,9 +2,10 @@
 title: "Chapter 1"
 tutorial:
   id: "code.r-journalism/chapter-1"
-  version: .8
+  version: .85
 output:
   learnr::tutorial:
+    fig_caption: no
     progressive: true
     theme: lumen
     highlight: espresso
@@ -15,32 +16,60 @@ runtime: shiny_prerendered
 ```{r setup, include=FALSE}
 library(learnr)
 library(tidyverse)
+library(checkr)
+
 knitr::opts_chunk$set(echo = FALSE)
+
 years <- c(301, 978, 101)
 burgers <- data.frame(id=c(60006,60007,60008,60009, 60010), name=c("Bob", "Linda", "Louise", "Tina", "Gene"), age=c(45, 44, 12, 13, 11), shirt=c("White", "Red", "Pink", "Blue", "Yellow"))
 burgers$shirt<- factor(burgers$shirt)
 burgers$id <- factor(burgers$id)
 burgers$name <- as.character(burgers$name)
 
+nospace <- function(a) {
+  b <- gsub(" ","",a) 
+  gsub("\\n", "", b)
+}
+
+is_bad_code <- function(user_code, check_code, envir_result) {
+  eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
+}
+
+checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
+  if (is_bad_code(user_code, check_code, envir_result)) {
+    return(list(message = "Code wasn't right!", correct = FALSE, location = "append"))
+  } else {
+    return(list(message = "Great Job!", correct = TRUE, location = "append"))
+  }
+}  
+
+tutorial_options(exercise.timelimit = 30, exercise.checker = checker)
+#tutorial_options(exercise.checker = checkthat::check_exercise)
+
+
 ```
 
 
 ## Intro to R
 
+
 ### Objects
 
 Assign the number 17 to the object **ub**
 
-```{r ub, include=FALSE}
-ub <- NA
-```
 
-```{r object, exercise=T, exercise.timelimit=60}
-ub    
+```{r filter, exercise=TRUE}
+ub
 
 ub
 ```
 
+
+```{r filter-check}
+ub <- 17
+
+ub
+``` 
 
 ### Array
 
@@ -48,28 +77,47 @@ Create an array of numbers: 301, 978, and 101.
 
 Assign it to the object "years"
 
-```{r arrays, exercise=T, exercise.timelimit=60}
-years #replace this with your code
+```{r y1, exercise=TRUE}
+years #replace this with your code and delete this comment before submitting
 
 years
 ```
+
+
+```{r y1-check}
+years <- c(301, 978, 101)
+
+years
+``` 
+
 
 ### Functions
 
 
 What's the average of the array of numbers assigned to "years"?
 
-```{r average, exercise=T, exercise.timelimit=60}
+```{r a1, exercise=TRUE}
 (years)
 ```
+
+
+```{r a1-check}
+mean(years)
+``` 
 
 ### Classes
 
 Take a look at the structure of **burgers**:
 
-```{r structure, exercise=T, exercise.timelimit=60}
+
+```{r st1, exercise=TRUE}
 
 ```
+
+
+```{r st1-check}
+str(burgers)
+``` 
 
 
 ```{r first_quiz}
@@ -95,41 +143,86 @@ burgers
 ```
 
 
-How do you refer to the the *shirt* variable/column with []?
+How do you refer to the the *shirt* variable/column with **[]**?
 
-```{r variable1, exercise=T, exercise.timelimit=60}
-# Add to the line below
+
+```{r v1, exercise=TRUE}
+# Add to the line below and delete this comment before submitting
 
 burgers
 ```
+
+
+<div id="v1-hint">
+**Hint:** Delete the commented line out before submitting.
+</div>
+
+```{r v1-check}
+burgers[,3]
+``` 
+
 
 How do you refer to the the *shirt* variable/column with $?
 
-```{r variable2, exercise=T, exercise.timelimit=60}
-# Add to the line below
+```{r v2, exercise=TRUE}
+# Add to the line below and delete this comment before submitting
 
 burgers
 ```
+
+```{r v2-check}
+burgers$shirt
+``` 
+
+
+<div id="v2-hint">
+**Hint:** Delete the commented line out before submitting.
+</div>
 
 ### Pulling a row of data
 
 Extract entire row for Linda using [].
 
-```{r variable4, exercise=T, exercise.timelimit=60}
-# Add to the line below
+```{r v4, exercise=TRUE}
+# Add to the line below and delete this comment before submitting
 
-    burgers
+burgers
 ```
+
+```{r v4-check}
+burgers[2,]
+```   
+
+
+<div id="v4-hint">
+**Hint:** Delete the commented line out before submitting.
+</div>
 
 ### Converting data classes
 
 Convert the *id* variable of the **burgers** data frame to numeric.
 
-```{r variable3, exercise=T, exercise.timelimit=60}
-# Add to the line below
 
-burgers
+```{r v3, exercise=TRUE}
+# Add to the line below and delete this comment before submitting
+
+burgers$id <- 
+
+burgers$id
+class(burgers$id)
 ```
+
+```{r v3-check}
+burgers$id <- as.numeric(as.character(burgers$id))
+
+burgers$id
+class(burgers$id)
+```   
+
+
+<div id="v3-hint">
+**Hint:** Delete the commented line out before submitting.
+</div>
 
 ### Boolean logic
 
@@ -137,12 +230,21 @@ Check if Gene's age is 11.
 
 *Note:* Is the answer the same as above (correct) or is it 1-5 (false)? 
 
-```{r boolean, exercise=T, exercise.timelimit=60}
-# Modify the line of code below
+
+```{r b, exercise=TRUE}
+# Modify the line of code below and delete this comment before submitting
 
 age_test <- burgers$age[5]    11
 
 age_test
 ```
 
+```{r b-check}
+age_test <- burgers$age[5] ==   11
 
+age_test
+```   
+
+<div id="b1-hint">
+**Hint:** Delete the commented line out before submitting.
+</div>
