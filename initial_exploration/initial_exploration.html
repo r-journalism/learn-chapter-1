@@ -319,7 +319,7 @@ patientdata[c(&quot;diabetes&quot;, &quot;status&quot;)]</code></pre>
 <pre><code>##   patientID age
 ## 2       208  34
 ## 3       113  28</code></pre>
-<p>{{% notice tip %}} You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it’s 2, so patientdata[,2] is the equivalent. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. {{% /notice %}}</p>
+<p>{{% notice tip %}} You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it’s 2, so patientdata[,2] is the equivalent. If you only wanted the third row, then it’d look like patientdata[3,]. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. {{% /notice %}}</p>
 <p>Instead of using <code>mean(patientdata[,2])</code>, you can select the column <code>age</code> from the <code>patientdata</code> data frame with the <code>$</code> sign.</p>
 <pre class="r"><code>mean(patientdata$age)</code></pre>
 <pre><code>## [1] 34.75</code></pre>

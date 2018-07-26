@@ -122,7 +122,7 @@ patientdata[2:3, 1:2]
 
 
 {{% notice tip %}}
-You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it's 2, so patientdata[,2] is the equivalent. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. 
+You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it's 2, so patientdata[,2] is the equivalent. If you only wanted the third row, then it'd look like patientdata[3,]. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. 
 {{% /notice %}}
 
 Instead of using `mean(patientdata[,2])`, you can select the column `age` from the `patientdata` data frame with the `$` sign.
