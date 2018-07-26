@@ -46,6 +46,40 @@ This shows another useful way of creating a vector: the `seq()` or sequence func
 sum(vec1)
 ```
 
+## Matrices
+
+**Matrices** are two-dimensional vectors.
+
+It looks like this 
+
+```{r matrix}
+mat <- matrix(data=c(9,2,3,4,5,6), ncol=3)
+mat
+```
+
+The argument `data` specifies which numbers should be in the matrix.
+
+Use either `ncol` to specify the number of columns or `nrow` to specify the number of rows.
+
+Matrix operations are similar to vector operations.
+
+```{r matrix2}
+mat[1,2]
+```
+
+Elements of a matrix can be addressed in the usual way
+
+```{r matrix3}
+mat[2,1]
+```
+
+When you want to select a whole row, you leave the spot for the column number empty and vice versa for the columns.
+
+```{r matrix4}
+mat[,3]
+```
+
+
 ## Data frames
 
 If you're used to working with spreadsheets, then *data frames* will make the most sense to you in R.
@@ -86,11 +120,18 @@ patientdata[c(1,3),1:2]
 patientdata[2:3, 1:2]
 ```
 
+
+{{% notice tip %}}
+You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it's 2, so patientdata[,2] is the equivalent. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. 
+{{% /notice %}}
+
+Instead of using `mean(patientdata[,2])`, you can select the column `age` from the `patientdata` data frame with the `$` sign.
+
 ```{r df2}
 mean(patientdata$age)
 ```
 
-Instead of using `mean(patientdata[,2])`, you can select the column `age` from the `patientdata` data frame with the `$` sign.
+Here's an alternative way to refer to the `age` column of the `patientdata` data frame. But you will rarely use this method.
 
 
 ```{r df3}

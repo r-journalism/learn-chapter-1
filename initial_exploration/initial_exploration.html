@@ -247,6 +247,27 @@ vec2</code></pre>
 <pre class="r"><code>sum(vec1)</code></pre>
 <pre><code>## [1] 35</code></pre>
 </div>
+<div id="matrices" class="section level2">
+<h2>Matrices</h2>
+<p><strong>Matrices</strong> are two-dimensional vectors.</p>
+<p>It looks like this</p>
+<pre class="r"><code>mat &lt;- matrix(data=c(9,2,3,4,5,6), ncol=3)
+mat</code></pre>
+<pre><code>##      [,1] [,2] [,3]
+## [1,]    9    3    5
+## [2,]    2    4    6</code></pre>
+<p>The argument <code>data</code> specifies which numbers should be in the matrix.</p>
+<p>Use either <code>ncol</code> to specify the number of columns or <code>nrow</code> to specify the number of rows.</p>
+<p>Matrix operations are similar to vector operations.</p>
+<pre class="r"><code>mat[1,2]</code></pre>
+<pre><code>## [1] 3</code></pre>
+<p>Elements of a matrix can be addressed in the usual way</p>
+<pre class="r"><code>mat[2,1]</code></pre>
+<pre><code>## [1] 2</code></pre>
+<p>When you want to select a whole row, you leave the spot for the column number empty and vice versa for the columns.</p>
+<pre class="r"><code>mat[,3]</code></pre>
+<pre><code>## [1] 5 6</code></pre>
+</div>
 <div id="data-frames" class="section level2">
 <h2>Data frames</h2>
 <p>If you’re used to working with spreadsheets, then <em>data frames</em> will make the most sense to you in R.</p>
@@ -298,9 +319,11 @@ patientdata[c(&quot;diabetes&quot;, &quot;status&quot;)]</code></pre>
 <pre><code>##   patientID age
 ## 2       208  34
 ## 3       113  28</code></pre>
+<p>{{% notice tip %}} You can reference a column with patientdata$age and you can also refer to the column based on the index of it. In this instance it’s 2, so patientdata[,2] is the equivalent. Think of it as data[Row, Column]. I remember it as data[rocks], as in data[Ro,Cks]. {{% /notice %}}</p>
+<p>Instead of using <code>mean(patientdata[,2])</code>, you can select the column <code>age</code> from the <code>patientdata</code> data frame with the <code>$</code> sign.</p>
 <pre class="r"><code>mean(patientdata$age)</code></pre>
 <pre><code>## [1] 34.75</code></pre>
-<p>Instead of using <code>mean(patientdata[,2])</code>, you can select the column <code>age</code> from the <code>patientdata</code> data frame with the <code>$</code> sign.</p>
+<p>Here’s an alternative way to refer to the <code>age</code> column of the <code>patientdata</code> data frame. But you will rarely use this method.</p>
 <pre class="r"><code>mean(patientdata[[&quot;age&quot;]])</code></pre>
 <pre><code>## [1] 34.75</code></pre>
 <p>Here’s an alternative way to refer to the <code>age</code> column of the <code>patientdata</code> data frame. But you will rarely use this method.</p>

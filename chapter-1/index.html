@@ -127,14 +127,14 @@ years</code></pre>
 <tr>
 <td>
 
-<div id="htmlwidget-465d2ed1ff8c5cd847a4" style="width:100%;height:auto;", class = "quiz html-widget">
+<div id="htmlwidget-e47a43d7584a647a49a7" style="width:100%;height:auto;", class = "quiz html-widget">
 <div class="panel panel-default">
 <div class="panel-body quizArea">
 </div>
 </div>
 </div>
 
-<script type="application/json" data-for="htmlwidget-465d2ed1ff8c5cd847a4">{"x":{"question":"What kind of class is the variable id?","answers":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"label":"first_quiz-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":true,"json":{"info":{"name":"","main":""},"questions":[{"q":"What kind of class is the variable id?","a":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-e47a43d7584a647a49a7">{"x":{"question":"What kind of class is the variable id?","answers":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"label":"first_quiz-1","skipStartButton":true,"perQuestionResponseAnswers":true,"perQuestionResponseMessaging":true,"preventUnanswered":true,"displayQuestionCount":false,"displayQuestionNumber":false,"disableRanking":true,"nextQuestionText":"","checkAnswerText":"Submit Answer","allowRetry":false,"randomSortAnswers":true,"json":{"info":{"name":"","main":""},"questions":[{"q":"What kind of class is the variable id?","a":[{"option":"character","correct":false,"message":null},{"option":"number","correct":false,"message":null},{"option":"factor","correct":true,"message":null},{"option":"date","correct":false,"message":null}],"correct":"Correct!","incorrect":"Incorrect."}]}},"evals":[],"jsHooks":[]}</script>
 </td>
 </tr>
 </table>
@@ -255,7 +255,13 @@ nospace <- function(a) {
 }
 
 is_bad_code <- function(user_code, check_code, envir_result) {
-  eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
+  user <- eval(nospace(user_code))
+  result <- eval(nospace(check_code), envir = envir_result)
+  
+  if ((ncol(user) != ncol(result)) & (nrow(user) != nrow(result)) ) {
+    
+   eval(nospace(user_code)) != eval(nospace(check_code))
+  }
 }
 
 checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {

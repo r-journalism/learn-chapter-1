@@ -31,7 +31,8 @@ nospace <- function(a) {
 }
 
 is_bad_code <- function(user_code, check_code, envir_result) {
-  eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
+   eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
+  }
 }
 
 checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
