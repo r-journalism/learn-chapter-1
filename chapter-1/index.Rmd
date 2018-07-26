@@ -8,10 +8,9 @@ output:
     progressive: true
     theme: lumen
     highlight: espresso
-    include:
-      before_body: _navbar.html
 runtime: shiny_prerendered
 ---
+
 
 ```{r setup, include=FALSE}
 library(learnr)
@@ -30,11 +29,34 @@ nospace <- function(a) {
   gsub("\\n", "", b)
 }
 
-is_bad_code <- function(user_code, check_code, envir_result) {
-   eval(nospace(user_code)) != eval(nospace(check_code), envir = envir_result)
-  }
-}
 
+
+
+is_bad_code <- function(user_code, check_code, envir_result) {
+
+  e_rows <- nrow(eval(parse(text = user_code)))
+  r_rows <- nrow(eval(parse(text = check_code), envir = envir_result))
+  e_cols <- ncol(eval(parse(text = user_code)))
+  r_cols <- ncol(eval(parse(text = check_code), envir = envir_result))
+  e_type <- typeof(eval(parse(text = user_code)))
+  r_type <- typeof(eval(parse(text = check_code), envir=envir_result))
+  e_len <- length(eval(parse(text = user_code)))
+  r_len <- length(eval(parse(text = check_code)))
+  
+  if (e_len!=0 & r_len!=0) {
+    if (e_type==r_type) {
+      if (e_type!="character" & e_type!="double") {
+        if (e_rows==r_rows && e_cols==r_cols) {
+          eval(parse(text = user_code)) != eval(parse(text = check_code), envir = envir_result)
+        } else {
+          TRUE
+        }
+      } else { eval(parse(text = user_code)) != eval(parse(text = check_code), envir = envir_result) }
+    } else {
+      TRUE
+    }
+  } else { TRUE }
+}
 checker <- function(label, user_code, check_code, envir_result, evaluate_result, ...) {
   if (is_bad_code(user_code, check_code, envir_result)) {
     return(list(message = "Code wasn't right!", correct = FALSE, location = "append"))
@@ -78,7 +100,7 @@ Create an array of numbers: 301, 978, and 101.
 Assign it to the object "years"
 
 ```{r y1, exercise=TRUE}
-years #replace this with your code and delete this comment before submitting
+years #replace this with your code 
 
 years
 ```
@@ -147,15 +169,12 @@ How do you refer to the the *shirt* variable/column with **[]**?
 
 
 ```{r v1, exercise=TRUE}
-# Add to the line below and delete this comment before submitting
+# Add to the line below 
 
 burgers
 ```
 
 
-<div id="v1-hint">
-**Hint:** Delete the commented line out before submitting.
-</div>
 
 ```{r v1-check}
 burgers[,4]
@@ -165,7 +184,7 @@ burgers[,4]
 How do you refer to the the *shirt* variable/column with $?
 
 ```{r v2, exercise=TRUE}
-# Add to the line below and delete this comment before submitting
+# Add to the line below 
 
 burgers
 ```
@@ -175,16 +194,13 @@ burgers$shirt
 ``` 
 
 
-<div id="v2-hint">
-**Hint:** Delete the commented line out before submitting.
-</div>
 
 ### Pulling a row of data
 
 Extract entire row for Linda using [].
 
 ```{r v4, exercise=TRUE}
-# Add to the line below and delete this comment before submitting
+# Add to the line below 
 
 burgers
 ```
@@ -194,17 +210,13 @@ burgers[2,]
 ```   
 
 
-<div id="v4-hint">
-**Hint:** Delete the commented line out before submitting.
-</div>
-
 ### Converting data classes
 
 Convert the *id* variable of the **burgers** data frame to numeric.
 
 
 ```{r v3, exercise=TRUE}
-# Add to the line below and delete this comment before submitting
+# Add to the line below 
 
 burgers$id <- 
 
@@ -220,10 +232,6 @@ class(burgers$id)
 ```   
 
 
-<div id="v3-hint">
-**Hint:** Delete the commented line out before submitting.
-</div>
-
 ### Boolean logic
 
 Check if Gene's age is 11.
@@ -232,7 +240,7 @@ Check if Gene's age is 11.
 
 
 ```{r b, exercise=TRUE}
-# Modify the line of code below and delete this comment before submitting
+# Modify the line of code below 
 
 age_test <- burgers$age[5]    11
 
@@ -244,7 +252,3 @@ age_test <- burgers$age[5] ==   11
 
 age_test
 ```   
-
-<div id="b1-hint">
-**Hint:** Delete the commented line out before submitting.
-</div>
