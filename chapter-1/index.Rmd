@@ -47,7 +47,7 @@ is_bad_code <- function(user_code, check_code, envir_result) {
   if (is_null!=T){
     if (e_len!=0 & r_len!=0) {
       if (e_type==r_type) {
-        if (e_type!="character" & e_type!="double" & e_type!="integer") {
+       if (e_type!="character" & e_type!="double" & e_type!="integer" & e_type!="logical")  {
           if (e_rows==r_rows && e_cols==r_cols) {
             eval(parse(text = user_code)) != eval(parse(text = check_code), envir = envir_result)
           } else {
